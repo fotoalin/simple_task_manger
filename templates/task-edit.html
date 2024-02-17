@@ -1,0 +1,8 @@
+<span id="task-name-{{task.id}}" hx-swap-oob="outerHTML">
+    <input type="text" id="task-name-input" class="form-control" name="new_content" value="{{ task.content }}" autofocus
+            hx-post="/update/{{ task.id }}" 
+            hx-trigger="keyup[key=='Enter']"
+            hx-target="#task-name-{{task.id}}" 
+            hx-swap="innerHTML"
+            >
+</span>
