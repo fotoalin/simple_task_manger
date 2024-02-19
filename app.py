@@ -90,7 +90,7 @@ def update(id):
 
 @app.route("/search", methods=["POST"])
 def search():
-    term = request.form["term"]
+    term = request.form.get("term", None)
     if term == "" or term is None or term.isspace() or term == "*":
         tasks = db.all()
     else:
